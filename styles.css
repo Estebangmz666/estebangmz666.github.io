@@ -11,6 +11,12 @@ body {
     color: #2f2f2f;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 header {
@@ -29,6 +35,7 @@ nav {
     gap: 2em;
     padding: 1em;
     border-bottom: 6px solid #3e2723;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -54,6 +61,19 @@ section {
     padding: 2em;
     max-width: 800px;
     box-shadow: 4px 4px 0 #4e342e;
+    margin-bottom: 30px;
+}
+
+section h2, section h3 {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 1em;
+}
+
+section p, section ul, section .certificate {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    text-align: justify;
 }
 
 h1, h2, h3 {
@@ -61,9 +81,11 @@ h1, h2, h3 {
     text-shadow: 1px 1px #cfcfcf;
 }
 
+
 ul {
     list-style-type: square;
-    padding-left: 1.5em;
+    font-size: 0.7rem;
+    line-height: 1.4;
 }
 
 footer {
@@ -72,6 +94,12 @@ footer {
     text-align: center;
     padding: 1em;
     border-top: 8px solid #654321;
+}
+
+.skill-icon:hover,
+.project-icon:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
 }
 
 .avatar {
@@ -195,10 +223,6 @@ body.dark-mode::before {
     height: auto;
 }
 
-section {
-    margin-bottom: 30px;
-}
-
 #social-media a {
     text-decoration: none;
     color: #333;
@@ -219,4 +243,78 @@ section {
 #social-media a i:hover {
     transform: scale(1.2);
     transition: transform 0.3s ease;
+}
+
+.typewriter {
+    overflow: hidden;
+    border-right: .15em solid #212121;
+    white-space: nowrap;
+    animation: typing 3s steps(30, end), blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #212121; }
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+
+    section {
+        margin: 1em;
+        padding: 1em;
+    }
+
+    .avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .certificate img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    nav a, .menu-button, #darkModeToggle {
+        font-size: 0.6rem;
+        padding: 0.4em 0.8em;
+    }
+
+    body {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 0.8rem;
+    }
+
+    section p, section ul {
+        font-size: 0.75rem;
+    }
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3 {
+    color: #ffcccc;
+    text-shadow: 1px 1px #800000;
+}
+
+.dark-mode #social-media a {
+    color: #ffcccc;
+}
+
+.dark-mode #social-media a:hover {
+    color: #ff9800;
 }
