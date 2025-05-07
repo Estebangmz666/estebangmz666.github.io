@@ -318,3 +318,9 @@ body.dark-mode::before {
 .dark-mode #social-media a:hover {
     color: #ff9800;
 }
+
+#projects article {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ccc;
+}
