@@ -324,3 +324,110 @@ body.dark-mode::before {
     padding-bottom: 1rem;
     border-bottom: 1px solid #ccc;
 }
+
+.featured-project {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: 5px solid #5a67d8 !important;
+    color: white;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(102, 126, 234, 0.3), 4px 4px 0 #4c51bf;
+    margin-bottom: 3rem;
+}
+
+.featured-project h3 {
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 1.1rem;
+}
+
+.featured-project p {
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.featured-badge {
+    background: #ff6b6b;
+    padding: 0.3em 0.6em;
+    border-radius: 4px;
+    font-size: 0.6rem;
+    border: 2px solid #ff5252;
+    box-shadow: 2px 2px 0 #e53e3e;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.project-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.project-link {
+    padding: 0.5em 1em;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5em;
+    transition: all 0.3s ease;
+    border: 3px solid;
+    box-shadow: 2px 2px 0;
+}
+
+.project-link.primary {
+    background: #4ecdc4;
+    color: white;
+    border-color: #44a08d;
+    box-shadow: 2px 2px 0 #3d8b82;
+}
+
+.project-link.primary:hover {
+    background: #26d0ce;
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}
+
+.project-link.secondary {
+    background: #ff8e53;
+    color: white;
+    border-color: #ff6b35;
+    box-shadow: 2px 2px 0 #e55039;
+}
+
+.project-link.secondary:hover {
+    background: #ffa368;
+    transform: translate(2px, 2px);
+    box-shadow: none;
+}
+
+/* Dark mode para el proyecto destacado */
+.dark-mode .featured-project {
+    background: linear-gradient(135deg, #8b0000 0%, #4d0000 100%);
+    border-color: #cc0000 !important;
+    box-shadow: 0 8px 16px rgba(139, 0, 0, 0.4), 4px 4px 0 #990000;
+}
+
+.dark-mode .featured-badge {
+    background: #ffa500;
+    border-color: #ff8c00;
+    box-shadow: 2px 2px 0 #ff7f00;
+}
+
+@media (max-width: 768px) {
+    .project-links {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .project-link {
+        text-align: center;
+        justify-content: center;
+    }
+}
