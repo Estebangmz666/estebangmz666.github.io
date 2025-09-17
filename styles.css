@@ -193,6 +193,15 @@ section h2 {
     margin-bottom: 1em;
 }
 
+.project-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 1em;
+    border: 3px solid #333;
+    border-radius: 4px;
+    box-shadow: 2px 2px 0 #1b5e20;
+}
+
 body::before {
     content: "";
     position: fixed;
@@ -214,13 +223,6 @@ body::before {
 body.dark-mode::before {
     background-image: url("./assets/nether-landscape.jpg");
     filter: blur(4px);
-}
-
-.certificate img {
-    max-width: 300px;
-    max-height: 200px;
-    width: auto;
-    height: auto;
 }
 
 #social-media a {
@@ -277,11 +279,6 @@ body.dark-mode::before {
     .avatar {
         width: 100px;
         height: 100px;
-    }
-
-    .certificate img {
-        max-width: 100%;
-        height: auto;
     }
 
     nav a, .menu-button, #darkModeToggle {
