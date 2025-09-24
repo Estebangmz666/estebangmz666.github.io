@@ -428,3 +428,33 @@ body.dark-mode::before {
         justify-content: center;
     }
 }
+
+#certificates {
+    padding: 2rem;
+    text-align: center;
+}
+
+.certificate {
+    margin-bottom: 2rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.certificate:hover {
+    transform: scale(1.02);
+}
+
+.certificate-thumbnail {
+    max-width: 200px; /* Ajusta según necesites */
+    height: auto;
+    border-radius: 4px;
+    margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+    .certificate-thumbnail {
+        max-width: 150px;
+    }
+}
