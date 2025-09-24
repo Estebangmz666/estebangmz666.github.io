@@ -429,31 +429,48 @@ body.dark-mode::before {
     }
 }
 
+/* Centra la sección en la página */
 #certificates {
     padding: 2rem;
-    text-align: center;
+    max-width: 1200px; /* Ancho máximo para que no se estire demasiado */
+    margin: 0 auto; /* Centra horizontalmente la sección */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los elementos hijos horizontalmente */
+    text-align: center; /* Centra el texto dentro de los elementos */
 }
 
+/* Estiliza cada certificado */
 .certificate {
     margin-bottom: 2rem;
     padding: 1rem;
     border: 1px solid #ddd;
     border-radius: 8px;
     transition: transform 0.3s ease;
+    max-width: 500px; /* Limita el ancho de cada certificado */
+    width: 100%; /* Ocupa todo el ancho disponible hasta el máximo */
 }
 
+/* Efecto hover */
 .certificate:hover {
     transform: scale(1.02);
 }
 
+/* Estiliza las imágenes */
 .certificate-thumbnail {
-    max-width: 200px; /* Ajusta según necesites */
+    max-width: 200px;
     height: auto;
     border-radius: 4px;
-    margin: 0.5rem 0;
+    margin: 0.5rem auto; /* Centra la imagen horizontalmente */
+    display: block; /* Asegura que la imagen se comporte como bloque */
 }
 
+/* Responsividad */
 @media (max-width: 768px) {
+    .certificate {
+        max-width: 90%; /* Ajusta el ancho en pantallas pequeñas */
+    }
+
     .certificate-thumbnail {
         max-width: 150px;
     }
