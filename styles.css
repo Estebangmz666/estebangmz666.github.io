@@ -3,11 +3,6 @@
 body {
     font-family: 'Press Start 2P', cursive;
     background-color: #7ec850;
-    /*background-image: url("./assets/overworld-landscape.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;*/
     color: #2f2f2f;
     margin: 0;
     padding: 0;
@@ -469,4 +464,9 @@ body.dark-mode::before {
     .certificate-thumbnail {
         max-width: 150px;
     }
+}
+
+.cv-download {
+    text-align: center;
+    margin: 2em 0;
 }
