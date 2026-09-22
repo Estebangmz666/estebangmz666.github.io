@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#121212" />
+  <title>Para Mi Amor 🌻</title>
+  <meta name="description" content="Un pequeño jardín que nunca se marchita." />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero__glow"></div>
+
+      <div class="hero__content">
+        <p class="eyebrow">21 · 09 · 2026</p>
+        <h1>
+          No pude comprarte<br />
+          <span>flores amarillas.</span>
+        </h1>
+
+        <p class="hero__copy">
+          Así que hice algo que no se marchita.
+        </p>
+
+        <button class="primary-button" id="openGardenButton">
+          <span>🌱</span>
+          Abrir tu jardín
+        </button>
+      </div>
+
+      <div class="scroll-hint">hecho especialmente para ti ↓</div>
+    </section>
+
+    <section class="garden-section hidden-section" id="gardenSection">
+      <div class="section-heading">
+        <p class="eyebrow">TU JARDÍN</p>
+        <h2>Hay detalles que duran unos días.</h2>
+        <p>Este quería que pudiera quedarse contigo un poquito más.</p>
+      </div>
+
+      <div class="garden" id="garden"></div>
+    </section>
+
+    <section class="gallery-section hidden-section">
+      <div class="section-heading">
+        <p class="eyebrow">NOSOTROS</p>
+        <h2>Un pequeño rollo de recuerdos.</h2>
+      </div>
+
+      <div class="photo-grid">
+        <article class="polaroid tilt-left">
+          <div class="photo-placeholder">
+            <img src="./images/WhatsApp Image 2026-09-21 at 19.31.18 (7).jpeg" alt="Camila y Esteban">
+          </div>
+          <p>Aquí todavía no sabía cuánto te iba a querer.</p>
+        </article>
+
+        <article class="polaroid tilt-right">
+          <div class="photo-placeholder">
+            <img src="./images/WhatsApp Image 2026-09-21 at 19.31.18 (2).jpeg" alt="Camila y Esteban">
+          </div>
+          <p>Una de mis personas favoritas en una de mis fotos favoritas.</p>
+        </article>
+
+        <article class="polaroid tilt-left">
+          <div class="photo-placeholder">
+
+            <img src="./images/WhatsApp Image 2026-09-21 at 19.31.18.jpeg" alt="Camila y Esteban">
+          </div>
+          <p>Mire esa hembra tan preciosa, ome.</p>
+        </article>
+
+        <article class="polaroid tilt-right">
+          <div class="photo-placeholder">
+            <img src="./images/WhatsApp Image 2026-09-21 at 19.31.18 (4).jpeg" alt="Camila y Esteban">
+          </div>
+          <p>De todos los lugares, siempre termino queriendo estar contigo.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="terminal-section hidden-section">
+      <div class="terminal-card">
+        <div class="terminal-bar">
+          <div class="terminal-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <p>gift-generator.exe</p>
+        </div>
+
+        <div class="terminal-body">
+          <p><span class="prompt">&gt;</span> buscando regalo_para_camila...</p>
+          <p>presupuesto: <strong>$0 (ya casi ilimitao)</strong></p>
+          <p>amor_disponible: <strong>∞</strong></p>
+          <p>ganas_de_hacerte_feliz: <strong>100%</strong></p>
+          <br />
+          <p><span class="prompt">&gt;</span> generando flores amarillas...</p>
+
+          <div class="progress-track">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+
+          <p id="terminalResult" class="terminal-result">esperando deploy...</p>
+
+          <button class="deploy-button" id="deployButton">deploy ❤️</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="letter-section hidden-section">
+      <div class="letter">
+        <span class="letter__flower">🌻</span>
+        <p class="eyebrow">PARA TI</p>
+        <h2>Camila,</h2>
+
+        <p>
+          Sé que tiktok y los millenials raros se inventaron que hoy tocaba dar flores amarillas.
+          Yo no tenía un ramo para darte, pero sí tenía tiempo, ganas
+          y una forma muy mía de decirte que pensé en ti.
+        </p>
+
+        <p>
+          Así que hice este lugarcito para que, cuando quieras,
+          puedas volver y encontrar tus flores otra vez.
+        </p>
+
+        <p>
+          Gracias por estar en mi vida, por los momentos bonitos,
+          por las bobadas, por las risas y por hacer que muchos días
+          normales terminen sintiéndose especiales.
+        </p>
+
+        <p class="letter__ending">
+          Con amor,<br />
+          <strong>Esteban 💛</strong>
+        </p>
+      </div>
+    </section>
+
+    <section class="final-section hidden-section" id="finalSection">
+      <div class="final-card">
+        <p>Hay flores que duran una semana.</p>
+        <h2>Estas viven mientras exista internet.</h2>
+        <div class="giant-flower">🌻</div>
+        <p class="final-small">
+          Hecho con ❤️, by Ing. Gomez, 2026. <br />
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <div class="petal-layer" id="petalLayer" aria-hidden="true"></div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
