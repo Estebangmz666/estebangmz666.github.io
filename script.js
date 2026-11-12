@@ -2,129 +2,134 @@ const root = document.documentElement;
 const themeToggle = document.querySelector(".theme-toggle");
 const themeIcon = document.querySelector(".theme-icon");
 const languageToggle = document.querySelector(".language-toggle");
+const skills = document.querySelector("[data-i18n-label='skills']");
 const year = document.querySelector("#year");
 
 const translations = {
-  en: {
+  "en": {
     "nav.projects": "Projects",
+    "nav.experience": "Experience",
     "nav.about": "About",
     "nav.certifications": "Certifications",
     "nav.contact": "Contact",
-    "hero.eyebrow": "Backend developer · Armenia, Quindio",
-    "hero.title": "Hi, I am <span>Esteban Gomez Leon</span>. I build solid, well-structured backend solutions.",
-    "hero.copy": "Systems and Computer Engineering student at Universidad del Quindio. I work with Java, Spring Boot, REST APIs, relational databases and full stack applications with Angular.",
-    "hero.availability": "Open to work: backend developer roles, Java, Spring Boot and REST API projects.",
+    "hero.eyebrow": "Backend developer · Armenia, Quindío",
+    "hero.copy": "I build REST APIs with Java, Spring Boot, and SQL. My project work covers authentication, booking rules, database migrations, and integration testing.",
+    "hero.availability": "Open to backend developer roles",
     "hero.projects": "View projects",
-    "hero.cv": "Download CV",
+    "hero.cv": "Download CV (EN)",
     "hero.email": "Email me",
     "projects.eyebrow": "Selected work",
     "projects.title": "Projects",
-    "project.stayhub": "Airbnb-style platform for managing accommodations, bookings, reviews, JWT authentication, host metrics and an interactive Mapbox map.",
-    "project.transactum": "Advanced virtual wallet for managing accounts, manual or scheduled transactions, points and user ranks with custom data structures.",
-    "project.lexipol": "Machine learning pipeline for sentiment analysis using TF-IDF and logistic regression on IMDB reviews.",
-    "project.gradesmasher": "R analysis about the relationship between study time and academic performance, with a linear model and result visualization.",
-    "project.wallet": "Desktop application for managing budgets, login and financial movements with an interface built in JavaFX.",
-    "project.academic": "Academic",
-    "project.algorithms": "Academic implementations of graphs, binary trees, queues, contact agenda and calculator with graphical interface.",
-    "tag.structures": "Structures",
-    "tag.regression": "Regression",
-    "tag.graphs": "Graphs",
-    "tag.trees": "Trees",
+    "project.grownups": "Veterinary management platform for appointments and clinical workflows. I implemented JWT authentication, recorded consent at account creation, and added coverage reporting to GitHub Actions.",
+    "project.demo": "Live site",
+    "project.stayhub": "Booking platform for rural accommodations. I built booking quotes, updated seasonal pricing, and added email notifications for completed reservations.",
+    "project.transactum": "Desktop wallet built with JavaFX and SQLite. I integrated the interface and implemented the points and rewards redemption system.",
+    "experience.title": "Experience",
+    "experience.research.date": "September 2026–Present",
+    "experience.research.title": "Research Assistant",
+    "experience.research.org": "Office of the Vice President for Research · Universidad del Quindío",
+    "experience.research.copy": "I migrate complete research project records between university systems, including literature reviews, project team members, research groups, budgets, and bibliographies.",
+    "experience.business.date": "February 2023–Present",
+    "experience.business.title": "Co-founder · ¡Ay, Donitas!",
+    "experience.business.copy": "I co-manage daily operations, inventory, and customer service.",
     "about.eyebrow": "Profile",
     "about.title": "About",
-    "about.copy": "I like building systems that feel simple for the user and solid in their architecture. My path goes from Java desktop applications to modern web development with Angular and Spring Boot, while exploring data analysis and machine learning with R and Python.",
+    "about.copy": "I study Systems and Computer Engineering at Universidad del Quindío. My work focuses on backend development with Java and Spring Boot, with experience integrating APIs into Angular and TypeScript applications.",
+    "about.languages": "Spanish (native) · English (B2)",
     "certs.eyebrow": "Education",
     "certs.title": "Certifications",
     "certs.view": "View certificate",
     "contact.eyebrow": "Contact",
-    "contact.title": "Let's build a clear, stable backend solution ready to grow.",
-    "footer.rights": "© <span id=\"year\"></span> Esteban Gomez Leon. All rights reserved."
+    "contact.title": "Get in touch"
   },
-  es: {
+  "es": {
     "nav.projects": "Proyectos",
-    "nav.about": "Sobre mi",
+    "nav.experience": "Experiencia",
+    "nav.about": "Sobre mí",
     "nav.certifications": "Certificaciones",
     "nav.contact": "Contacto",
-    "hero.eyebrow": "Desarrollador backend · Armenia, Quindio",
-    "hero.title": "Hola, soy <span>Esteban G\u00f3mez Le\u00f3n</span>. Desarrollo soluciones backend solidas y bien estructuradas.",
-    "hero.copy": "Estudiante de Ingenieria de Sistemas y Computacion en la Universidad del Quindio. Trabajo con Java, Spring Boot, APIs REST, bases de datos relacionales y aplicaciones full stack con Angular.",
-    "hero.availability": "Open to work: roles backend con Java, Spring Boot y proyectos de APIs REST.",
+    "hero.eyebrow": "Desarrollador backend · Armenia, Quindío",
+    "hero.copy": "Desarrollo APIs REST con Java, Spring Boot y SQL. Mis proyectos incluyen autenticación, reglas de reservas, migraciones de bases de datos y pruebas de integración.",
+    "hero.availability": "Disponible para roles de desarrollo backend",
     "hero.projects": "Ver proyectos",
-    "hero.cv": "Descargar CV",
-    "hero.email": "Escribeme",
+    "hero.cv": "Descargar CV (EN)",
+    "hero.email": "Escríbeme",
     "projects.eyebrow": "Trabajo seleccionado",
     "projects.title": "Proyectos",
-    "project.stayhub": "Plataforma tipo Airbnb para gestionar alojamientos, reservas, resenas, autenticacion JWT, metricas para anfitriones y mapa interactivo con Mapbox.",
-    "project.transactum": "Billetera virtual avanzada para gestionar cuentas, transacciones manuales o programadas, puntos y rangos de usuario con estructuras de datos propias.",
-    "project.lexipol": "Pipeline de machine learning para analisis de sentimientos usando TF-IDF y regresion logistica sobre resenas de IMDB.",
-    "project.gradesmasher": "Analisis en R sobre la relacion entre tiempo de estudio y rendimiento academico, con modelo lineal y visualizacion de resultados.",
-    "project.wallet": "Aplicacion de escritorio para gestionar presupuesto, login y movimientos financieros con una interfaz creada en JavaFX.",
-    "project.academic": "Academico",
-    "project.algorithms": "Implementaciones academicas de grafos, arboles binarios, colas, agenda de contactos y calculadora con interfaz grafica.",
-    "tag.structures": "Estructuras",
-    "tag.regression": "Regresion",
-    "tag.graphs": "Grafos",
-    "tag.trees": "Arboles",
+    "project.grownups": "Plataforma veterinaria para citas y flujos clínicos. Implementé autenticación JWT, el registro del consentimiento al crear cuentas y los informes de cobertura en GitHub Actions.",
+    "project.demo": "Sitio web",
+    "project.stayhub": "Plataforma de reservas para alojamientos rurales. Implementé cotizaciones, ajusté las tarifas por temporada y añadí notificaciones por correo para reservas completadas.",
+    "project.transactum": "Billetera de escritorio con JavaFX y SQLite. Integré la interfaz e implementé el sistema de puntos y canjes.",
+    "experience.title": "Experiencia",
+    "experience.research.date": "Septiembre de 2026–actualidad",
+    "experience.research.title": "Auxiliar de investigación",
+    "experience.research.org": "Vicerrectoría de Investigaciones · Universidad del Quindío",
+    "experience.research.copy": "Migro expedientes completos de proyectos de investigación entre sistemas de la universidad, incluidos estados del arte, integrantes, grupos de investigación, presupuestos y bibliografías.",
+    "experience.business.date": "Febrero de 2023–actualidad",
+    "experience.business.title": "Cofundador · ¡Ay, Donitas!",
+    "experience.business.copy": "Gestiono junto con mi socia la operación diaria, el inventario y la atención al cliente.",
     "about.eyebrow": "Perfil",
     "about.title": "Sobre mi",
-    "about.copy": "Me gusta construir sistemas que se sienten simples para el usuario y solidos en su arquitectura. Mi recorrido va desde aplicaciones de escritorio en Java hasta desarrollo web moderno con Angular y Spring Boot, mientras exploro analisis de datos y machine learning con R y Python.",
-    "certs.eyebrow": "Formacion",
+    "about.copy": "Estudio Ingeniería de Sistemas y Computación en la Universidad del Quindío. Me enfoco en desarrollo backend con Java y Spring Boot y he integrado APIs en aplicaciones con Angular y TypeScript.",
+    "about.languages": "Español nativo · Inglés B2",
+    "certs.eyebrow": "Formación",
     "certs.title": "Certificaciones",
     "certs.view": "Ver certificado",
     "contact.eyebrow": "Contacto",
-    "contact.title": "Construyamos una solucion backend clara, estable y lista para crecer.",
-    "footer.rights": "© <span id=\"year\"></span> Esteban G\u00f3mez Le\u00f3n. Todos los derechos reservados."
+    "contact.title": "Hablemos"
   }
 };
 
-const savedTheme = localStorage.getItem("portfolio-theme");
-const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-function setTheme(theme) {
-  root.classList.toggle("dark", theme === "dark");
-  themeIcon.textContent = theme === "dark" ? "◑" : "◐";
-  localStorage.setItem("portfolio-theme", theme);
-}
-
-function refreshYear() {
-  const yearElement = document.querySelector("#year");
-  if (yearElement) {
-    yearElement.textContent = new Date().getFullYear();
+function readPreference(key) {
+  try {
+    return localStorage.getItem(key);
+  } catch {
+    return null;
   }
 }
 
+function savePreference(key, value) {
+  try {
+    localStorage.setItem(key, value);
+  } catch {
+    // The controls remain usable when browser storage is unavailable.
+  }
+}
+
+function setTheme(theme) {
+  const isDark = theme === "dark";
+  root.classList.toggle("dark", isDark);
+  themeIcon.textContent = isDark ? "◑" : "◐";
+  themeToggle.setAttribute("aria-pressed", String(isDark));
+  savePreference("portfolio-theme", theme);
+}
+
 function changeLanguage(language) {
-  const selectedLanguage = translations[language] ? language : "en";
+  const selectedLanguage = language === "es" ? "es" : "en";
+  const isEnglish = selectedLanguage === "en";
+  const messages = translations[selectedLanguage];
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
-    const key = element.dataset.i18n;
-    const value = translations[selectedLanguage][key];
-
-    if (value) {
-      element.innerHTML = value;
-    }
+    element.textContent = messages[element.dataset.i18n];
   });
 
   root.lang = selectedLanguage;
-  languageToggle.textContent = selectedLanguage === "en" ? "ES" : "EN";
-  languageToggle.setAttribute(
-    "aria-label",
-    selectedLanguage === "en" ? "Change language to Spanish" : "Cambiar idioma a ingles"
-  );
-  localStorage.setItem("portfolio-language", selectedLanguage);
-  refreshYear();
+  languageToggle.textContent = isEnglish ? "ES" : "EN";
+  languageToggle.setAttribute("aria-label", isEnglish ? "Change language to Spanish" : "Cambiar idioma a inglés");
+  themeToggle.setAttribute("aria-label", isEnglish ? "Toggle dark mode" : "Alternar modo oscuro");
+  skills.setAttribute("aria-label", isEnglish ? "Skills" : "Habilidades");
+  document.querySelector(".nav").setAttribute("aria-label", isEnglish ? "Main navigation" : "Navegación principal");
+  savePreference("portfolio-language", selectedLanguage);
 }
 
-setTheme(savedTheme || (prefersDark ? "dark" : "light"));
-changeLanguage(localStorage.getItem("portfolio-language") || "en");
-refreshYear();
+setTheme(readPreference("portfolio-theme") === "light" ? "light" : "dark");
+changeLanguage(readPreference("portfolio-language"));
+year.textContent = new Date().getFullYear();
 
 themeToggle.addEventListener("click", () => {
-  const nextTheme = root.classList.contains("dark") ? "light" : "dark";
-  setTheme(nextTheme);
+  setTheme(root.classList.contains("dark") ? "light" : "dark");
 });
 
 languageToggle.addEventListener("click", () => {
-  const nextLanguage = root.lang === "en" ? "es" : "en";
-  changeLanguage(nextLanguage);
+  changeLanguage(root.lang === "en" ? "es" : "en");
 });
